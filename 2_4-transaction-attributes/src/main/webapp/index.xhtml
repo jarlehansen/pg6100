@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <h:outputStylesheet library="css" name="style.css"/>
+</h:head>
+<h:body>
+    <table>
+        <tr>
+            <td colspan="2"><h:outputText value="#{controller.lastStatus.type}"
+                                          style="font-weight: bold; font-size: 20px;"/></td>
+        </tr>
+        <tr>
+            <td>Info</td>
+            <td><h:outputText value="#{controller.lastStatus.text}" style="font-weight: bold; font-size: 16px;"/></td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td><h:outputText value="#{controller.lastStatus.statusCode}" style="font-weight: bold; font-size: 16px;"/>
+            </td>
+        </tr>
+    </table>
+    <hr/>
+    <h2>In transaction</h2>
+    <h:form>
+        <h:commandButton action="#{controller.requiredInTransaction()}" value="Required"/>
+    </h:form>
+    <br/>
+    <h:form>
+        <h:commandButton action="#{controller.requiresNewInTransaction()}" value="Requires new"/>
+    </h:form>
+    <br/>
+    <h:form>
+        <h:commandButton action="#{controller.supportsInTransaction()}" value="Supports"/>
+    </h:form>
+    <br/>
+    <h:form>
+        <h:commandButton action="#{controller.mandatoryInTransaction()}" value="Mandatory"/>
+    </h:form>
+    <br/>
+    <h:form>
+        <h:commandButton action="#{controller.notSupportedInTransaction()}" value="Not supported"/>
+    </h:form>
+    <br/>
+    <h:form>
+        <h:commandButton action="#{controller.neverInTransaction()}" value="Never"/>
+    </h:form>
+    <br/>
+
+    <h2>Not in transaction</h2>
+    <h:form>
+        <h:commandButton action="#{controller.requiredNotInTransaction()}" value="Required"/>
+    </h:form>
+    <br/>
+    <h:form>
+        <h:commandButton action="#{controller.requiresNewNotInTransaction()}" value="Requires new"/>
+    </h:form>
+    <br/>
+    <h:form>
+        <h:commandButton action="#{controller.supportsNotInTransaction()}" value="Supports"/>
+    </h:form>
+    <br/>
+    <h:form>
+        <h:commandButton action="#{controller.mandatoryNotInTransaction()}" value="Mandatory"/>
+    </h:form>
+    <br/>
+    <h:form>
+        <h:commandButton action="#{controller.notSupportedNotInTransaction()}" value="Not supported"/>
+    </h:form>
+    <br/>
+    <h:form>
+        <h:commandButton action="#{controller.neverNotInTransaction()}" value="Never"/>
+    </h:form>
+    <br/>
+</h:body>
+</html>
