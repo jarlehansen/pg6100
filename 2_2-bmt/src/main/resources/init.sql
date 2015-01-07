@@ -1,0 +1,1 @@
+INSERT INTO Entity values (1, 1);
