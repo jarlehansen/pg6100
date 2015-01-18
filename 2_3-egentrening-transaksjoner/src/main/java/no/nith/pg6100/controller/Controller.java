@@ -23,7 +23,7 @@ public class Controller implements Serializable {
     }
 
     public List<Customer> getCustomers() {
-        return new ArrayList<Customer>();
+        return new ArrayList<>();
     }
 
     public void setSelectedCustomer(Customer selectedCustomer) {
