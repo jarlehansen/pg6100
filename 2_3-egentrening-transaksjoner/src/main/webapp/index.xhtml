@@ -1,8 +1,32 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <h:outputScript library="primefaces" name="jquery/jquery.js"/>
+</h:head>
 <h:body>
-
+    <h:form>
+        <p:inputText id="name" value="#{controller.customerName}" placeholder="Navn"/>
+        <p:commandButton value="Lagre" action="#{controller.persistCustomer()}" update=":customerForm:customerList"/>
+    </h:form>
+    <br/>
+    <h:form id="customerForm">
+        <p:dataTable id="customerList" var="customer" value="#{controller.customers}" selectionMode="single"
+                     selection="#{controller.selectedCustomer}" rowKey="#{customer.id}">
+            <f:facet name="header">
+                Registrerte kunder
+            </f:facet>
+            <p:column headerText="Id">
+                <h:outputText value="#{customer.id}"/>
+            </p:column>
+            <p:column headerText="Navn">
+                <h:outputText value="#{customer.name}"/>
+            </p:column>
+        </p:dataTable>
+        <p:commandButton value="Slett" action="#{controller.deleteCustomer()}" update=":customerForm:customerList"/>
+    </h:form>
 </h:body>
 </html>
