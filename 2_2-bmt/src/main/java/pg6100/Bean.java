@@ -26,14 +26,17 @@ public class Bean {
         this.userTransaction = userTransaction;
     }
 
-    public void transactionalMethod() throws SystemException {
+    public void transactionalMethod() {
         try {
             userTransaction.begin();
             Entity entity = getEntity();
             entity.increaseCounter();
             userTransaction.commit();
         } catch (Exception e) {
-            userTransaction.rollback();
+            try {
+                userTransaction.rollback();
+            } catch (SystemException ignore) {
+            }
         }
     }
 

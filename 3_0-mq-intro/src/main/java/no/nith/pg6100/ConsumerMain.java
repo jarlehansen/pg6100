@@ -20,6 +20,9 @@ public class ConsumerMain {
         if (message instanceof TextMessage) {
             System.out.println(((TextMessage) message).getText());
         }
+
+        consumer.close();
+        session.close();
         connection.close();
     }
 }

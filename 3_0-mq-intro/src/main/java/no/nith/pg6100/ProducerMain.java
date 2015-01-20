@@ -14,11 +14,14 @@ public class ProducerMain {
 
         Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
         Queue destination = session.createQueue("PG6100");
-        MessageProducer messageProducer = session.createProducer(destination);
+        MessageProducer producer = session.createProducer(destination);
 
         TextMessage textMessage = session.createTextMessage();
         textMessage.setText("Test message for Active MQ");
-        messageProducer.send(textMessage);
+        producer.send(textMessage);
+
+        producer.close();
+        session.close();
         connection.close();
     }
 }
