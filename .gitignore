@@ -9,6 +9,9 @@
 1_0-jpa-repetisjon/src/main/java/no/nith/pg6100/*
 1_0-jpa-repetisjon/src/test/java/no/nith/pg6100/JpaIntegrationTest.java
 
+3_1-jms-p2p/*-activemq.sh
+3_1-jms-pub-sub/*-activemq.sh
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
