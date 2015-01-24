@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:body>
+    <h2>Point to point</h2>
+    <h:form>
+        <h:inputText value="#{p2PController.producedMessage}"/>
+        <h:commandButton value="Send message" action="#{p2PController.send()}"/>
+    </h:form>
+    <br/>
+    <br/>
+    <h:form>
+        <span style="font-weight: bold">Message:</span> <h:outputLabel value="#{p2PController.consumedMessage}"/>
+        <br/>
+        <br/>
+        <h:commandButton value="Consume message" action="#{p2PController.consume()}"/>
+    </h:form>
+</h:body>
+</html>
