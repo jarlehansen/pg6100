@@ -11,7 +11,7 @@ public class P2PBean {
     @JMSConnectionFactory("ConnectionFactory")
     private JMSContext context;
 
-    @Resource(lookup = "java:/pg6100/p2p")
+    @Resource(lookup = "java:/jms/queue/pg6100/p2p")
     private Queue destination;
 
     public void send(String message) {
