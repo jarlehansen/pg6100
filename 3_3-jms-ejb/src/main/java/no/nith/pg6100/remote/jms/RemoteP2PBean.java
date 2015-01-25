@@ -7,7 +7,7 @@ import javax.jms.*;
 @Stateless
 public class RemoteP2PBean {
     @Inject
-    @PG6100ConnectionFactory("http-remoting://192.168.1.37:8080")
+    @PG6100ConnectionFactory("http-remoting://127.0.0.1:8080")
     private JMSContext context;
 
     @Inject
