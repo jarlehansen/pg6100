@@ -21,8 +21,6 @@ public class ConsumerMain {
             System.out.println(((TextMessage) message).getText());
         }
 
-        consumer.close();
-        session.close();
         connection.close();
     }
 }

@@ -20,8 +20,6 @@ public class ProducerMain {
         textMessage.setText("Test message for Active MQ");
         producer.send(textMessage);
 
-        producer.close();
-        session.close();
         connection.close();
     }
 }
