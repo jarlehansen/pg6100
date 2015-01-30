@@ -3,9 +3,7 @@ package no.nith.pg6100.domain;
 import javax.annotation.Resource;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import javax.jms.JMSConnectionFactory;
-import javax.jms.JMSContext;
-import javax.jms.Queue;
+import javax.jms.*;
 
 @Stateless
 public class MessageProducer {
@@ -18,6 +16,13 @@ public class MessageProducer {
     private Queue destination;
 
     public void send(String message) {
-        context.createProducer().send(destination, message);
+        try {
+            TextMessage textMessage = context.createTextMessage(message);
+            textMessage.setIntProperty("amount", 200);
+            context.createProducer().send(destination, textMessage);
+        } catch (JMSException e) {
+            e.printStackTrace();
+        }
+
     }
 }

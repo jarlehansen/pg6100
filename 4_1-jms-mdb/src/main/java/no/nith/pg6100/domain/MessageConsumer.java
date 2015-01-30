@@ -10,7 +10,8 @@ import javax.jms.TextMessage;
 
 @MessageDriven(activationConfig = {
         @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue"),
-        @ActivationConfigProperty(propertyName = "destination", propertyValue = "java:/jms/queue/pg6100/p2p")
+        @ActivationConfigProperty(propertyName = "destination", propertyValue = "java:/jms/queue/pg6100/p2p"),
+        @ActivationConfigProperty(propertyName = "messageSelector", propertyValue = "amount > 100")
 })
 public class MessageConsumer implements MessageListener {
     @Inject
