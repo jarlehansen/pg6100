@@ -62,7 +62,7 @@ public class Controller {
     public void requiredNotInTransaction() {
         lastStatus = transactionConfigBean.required();
         lastStatus.setType("'Required' not in transaction");
-        lastStatus.setText(CALLER_TRANSACTION);
+        lastStatus.setText(NEW_TRANSACTION);
     }
 
     public void requiresNewNotInTransaction() {
