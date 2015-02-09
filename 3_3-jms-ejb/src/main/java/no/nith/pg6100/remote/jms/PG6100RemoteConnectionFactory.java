@@ -33,7 +33,7 @@ public class PG6100RemoteConnectionFactory {
 
             InitialContext initialContext = new InitialContext(properties);
             ConnectionFactory connectionFactory = (ConnectionFactory) initialContext.lookup("jms/RemoteConnectionFactory");
-            context = connectionFactory.createContext();
+            context = connectionFactory.createContext("<username>", "<password>");
         }
         return context;
     }
