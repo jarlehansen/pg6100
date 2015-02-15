@@ -6,7 +6,7 @@
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>HtmlAuth</web-resource-name>
-            <url-pattern>/*</url-pattern>
+            <url-pattern>/protected/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>pg6100_user</role-name>
