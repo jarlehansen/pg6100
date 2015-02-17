@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:body>
+    <h:panelGrid columns="2" cellspacing="15">
+        <f:facet name="header">
+            <h:outputText value="Property"/>
+            <h:outputText value="Value"/>
+        </f:facet>
+        <h:outputText value="getName()"/>
+        <h:outputText value="#{controller.principalName}"/>
+        <h:outputText value="isCallerInRole(pg6100_user)"/>
+        <h:outputText value="#{controller.callerInRole}"/>
+    </h:panelGrid>
+</h:body>
+</html>
