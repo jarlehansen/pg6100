@@ -17,6 +17,6 @@ public class Main {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer(new StreamSource(xsltFile));
 
-        transformer.transform(new StreamSource(xmlDocument), new StreamResult(new File("src/main/resources/index2.html")));
+        transformer.transform(new StreamSource(xmlDocument), new StreamResult(new File("src/main/resources/index.html")));
     }
 }
