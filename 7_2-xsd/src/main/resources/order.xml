@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<order id="1234" date="2014-06-05T20:30:00">
+    <content>
+        <order_line item="H2G2"> <!-- quantity tatt bort -->
+            <unit_price>23.5</unit_price>
+        </order_line>
+        <order_line item="Harry Potter" quantity="2">
+            <unit_price>34.99</unit_price>
+        </order_line>
+    </content>
+</order>

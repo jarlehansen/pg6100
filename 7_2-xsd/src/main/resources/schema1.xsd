@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="order" type="order"/>
+
+  <xs:complexType name="order">
+    <xs:sequence>
+      <xs:element name="content" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="order_line" type="orderLine" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:long" use="required"/>
+    <xs:attribute name="date" type="xs:dateTime"/>
+  </xs:complexType>
+
+  <xs:complexType name="orderLine">
+    <xs:sequence>
+      <xs:element name="unit_price" type="xs:double" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="item" type="xs:string"/>
+    <xs:attribute name="quantity" type="xs:int" use="required"/>
+  </xs:complexType>
+</xs:schema>
+
