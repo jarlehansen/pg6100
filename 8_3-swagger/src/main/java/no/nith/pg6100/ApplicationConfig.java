@@ -18,7 +18,7 @@ public class ApplicationConfig extends Application {
     public ApplicationConfig() {
         BeanConfig beanConfig = new BeanConfig();
         beanConfig.setVersion("1.0.2");
-        beanConfig.setBasePath("http://localhost:8080/8_2-swagger-1.0-SNAPSHOT/rest");
+        beanConfig.setBasePath("http://localhost:8080/8_3-swagger-1.0-SNAPSHOT/rest");
         beanConfig.setResourcePackage("no.nith.pg6100.service");
         beanConfig.setScan(true);
     }

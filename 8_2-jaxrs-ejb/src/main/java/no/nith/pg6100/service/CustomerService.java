@@ -10,7 +10,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.net.URI;
-import java.util.List;
 
 @Path("/customers")
 @Produces(MediaType.APPLICATION_JSON)
@@ -26,14 +25,15 @@ public class CustomerService {
     }
 
     @GET
-    public List<Customer> getAll() {
-        return customerDao.getAll();
+    public Response getAll() {
+        return Response.ok(customerDao.getAll()).build();
     }
 
     @GET
+
     @Path("{index}")
-    public Customer getCustomer(@PathParam("index") int index) {
-        return customerDao.get(index);
+    public Response getCustomer(@PathParam("index") int index) {
+        return Response.ok(customerDao.get(index)).build();
     }
 
     @DELETE
