@@ -6,9 +6,9 @@ import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 
 @Provider
-public class IllegalStateMapper implements ExceptionMapper<IllegalStateException> {
+public class IllegalStateMapper implements ExceptionMapper<RuntimeException> {
     @Override
-    public Response toResponse(IllegalStateException exception) {
+    public Response toResponse(RuntimeException exception) {
         return Response.status(404).entity(exception.getMessage()).type(MediaType.TEXT_PLAIN).build();
     }
 }
