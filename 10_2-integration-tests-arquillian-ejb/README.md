@@ -1,0 +1,19 @@
+Glassfish dependencies:
+<dependency>
+    <groupId>org.jboss.arquillian.container</groupId>
+    <artifactId>arquillian-glassfish-embedded-3.1</artifactId>
+    <version>1.0.0.CR4</version>
+    <scope>test</scope>
+    <exclusions>
+        <exclusion>
+            <groupId>org.jboss.arquillian.container</groupId>
+            <artifactId>arquillian-container-spi</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
+<dependency>
+    <groupId>org.glassfish.main.extras</groupId>
+    <artifactId>glassfish-embedded-all</artifactId>
+    <version>4.1</version>
+    <scope>test</scope>
+</dependency>
