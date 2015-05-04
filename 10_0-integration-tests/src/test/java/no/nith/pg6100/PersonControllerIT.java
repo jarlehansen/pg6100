@@ -26,7 +26,11 @@ public class PersonControllerIT {
     public void addPerson() {
         Person person = new Person("Per");
         personController.setPerson(person);
+
+        h2Setup.entityManager().getTransaction().begin();
         personController.persist();
+        h2Setup.entityManager().getTransaction().commit();
+
 
         Person result = personController.findById(person.getId());
         assertTrue(person.getId() > 0);
